@@ -1,0 +1,26 @@
+api:
+  access_point: "https://api.francetravail.io/partenaire"
+  api_list:
+    - name: "offres"
+      path : "/offresdemploi/v2/offres"
+      endpoints: 
+        - value: "/search"
+          params:
+            departement : "07"
+            typeContrat : "CDI"
+          method: "GET"
+
+auth:
+  url: "https://entreprise.francetravail.fr/connexion/oauth2/access_token"
+  params: 
+    realm: "partenaire"
+  headers:
+    Content-Type: "application/x-www-form-urlencoded"
+  payload:
+    grant_type : "client_credentials"
+    scopes:
+      - "api_offresdemploiv2"
+      - "o2dsoffre"
+
+outputs:
+  csv_path: ../data # chemin relatif par rapport au fichier yaml

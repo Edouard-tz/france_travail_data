@@ -1,0 +1,18 @@
+api:
+  base_url: "https://example.com"
+  endpoints:
+    offres_demploi:
+      path: "/offres"
+      scope: "api_offresdemploiv2 o2dsoffre"
+      quota: 1000  # Quota journalier en nombre de requêtes
+    entreprise:
+      path: "/entreprises"
+      scope: "api_entreprises"
+      quota: 500
+    competences:
+      path: "/competences"
+      scope: "api_competences"
+      quota: 200
+  auth:
+    token_url: "/connexion/oauth2/access_token?realm=%2Fpartenaire"
+    grant_type: "client_credentials"
